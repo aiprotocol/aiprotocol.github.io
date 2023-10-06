@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tokenomics Pie Chart</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container" id="tokenomics">
+        <h2>Tokenomics Pie Chart</h2>
+
+        <h5>Total Supply - 1 Billion AIPT</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Pie Chart -->
+                <canvas id="tokenomics-chart" width="400" height="400"></canvas>
+            </div>
+            <div class="col-md-6">
+                <!-- Legend -->
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="badge">25%</span>Development and Operations</li>
+                    <li class="list-group-item"><span class="badge">15%</span>Marketing and Community</li>
+                    <li class="list-group-item"><span class="badge">35%</span>Ecosystem Growth</li>
+                    <li class="list-group-item"><span class="badge">15%</span>Reserve Fund</li>
+                    <li class="list-group-item"><span class="badge">10%</span>Team and Advisors</li>
+                    <!-- 					<li class="list-group-item"><span class="badge">5%</span>Private/Public Sale</li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+    <!-- Script for generating Pie Chart -->
+    <script>
+        var ctx = document.getElementById("tokenomics-chart").getContext('2d');
+        var tokenomicsChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Development and Operations", "Marketing and Community", "Ecosystem Growth", "Reserve Fund", "Team and Advisors"],
+                datasets: [{
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56",
+                        "#4BC0C0",
+                        "#9966FF",
+                    ],
+                    data: [25, 15, 35, 15, 10]
+
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'bottom',
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

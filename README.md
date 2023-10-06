@@ -1,2 +1,2 @@
-# aiprotocol.github.io
-Official Website
+# ai-protocol
+AI Protocol 
